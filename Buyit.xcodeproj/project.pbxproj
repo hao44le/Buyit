@@ -12,6 +12,8 @@
 		C073EDF31BB207DD00DE44A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C073EDF11BB207DD00DE44A7 /* Main.storyboard */; };
 		C073EDF51BB207DD00DE44A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C073EDF41BB207DD00DE44A7 /* Assets.xcassets */; };
 		C073EDF81BB207DD00DE44A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C073EDF61BB207DD00DE44A7 /* LaunchScreen.storyboard */; };
+		C073EE041BB20B3500DE44A7 /* SEDraggable.m in Sources */ = {isa = PBXBuildFile; fileRef = C073EE011BB20B3500DE44A7 /* SEDraggable.m */; settings = {ASSET_TAGS = (); }; };
+		C073EE051BB20B3500DE44A7 /* SEDraggableLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = C073EE031BB20B3500DE44A7 /* SEDraggableLocation.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,11 @@
 		C073EDF41BB207DD00DE44A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C073EDF71BB207DD00DE44A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C073EDF91BB207DD00DE44A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C073EDFF1BB20B3400DE44A7 /* Buyit-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Buyit-Bridging-Header.h"; sourceTree = "<group>"; };
+		C073EE001BB20B3500DE44A7 /* SEDraggable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEDraggable.h; sourceTree = "<group>"; };
+		C073EE011BB20B3500DE44A7 /* SEDraggable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SEDraggable.m; sourceTree = "<group>"; };
+		C073EE021BB20B3500DE44A7 /* SEDraggableLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEDraggableLocation.h; sourceTree = "<group>"; };
+		C073EE031BB20B3500DE44A7 /* SEDraggableLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SEDraggableLocation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +61,51 @@
 		C073EDEC1BB207DD00DE44A7 /* Buyit */ = {
 			isa = PBXGroup;
 			children = (
+				C073EE061BB20B3A00DE44A7 /* Library */,
 				C073EDED1BB207DD00DE44A7 /* AppDelegate.swift */,
-				C073EDEF1BB207DD00DE44A7 /* ViewController.swift */,
+				C073EE0F1BB20CA500DE44A7 /* Controller */,
+				C073EE0E1BB20C9000DE44A7 /* Supporting_File */,
+			);
+			path = Buyit;
+			sourceTree = "<group>";
+		};
+		C073EE061BB20B3A00DE44A7 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				C073EE071BB20B4300DE44A7 /* SEDraggable */,
+			);
+			name = Library;
+			sourceTree = "<group>";
+		};
+		C073EE071BB20B4300DE44A7 /* SEDraggable */ = {
+			isa = PBXGroup;
+			children = (
+				C073EE001BB20B3500DE44A7 /* SEDraggable.h */,
+				C073EE011BB20B3500DE44A7 /* SEDraggable.m */,
+				C073EE021BB20B3500DE44A7 /* SEDraggableLocation.h */,
+				C073EE031BB20B3500DE44A7 /* SEDraggableLocation.m */,
+			);
+			name = SEDraggable;
+			sourceTree = "<group>";
+		};
+		C073EE0E1BB20C9000DE44A7 /* Supporting_File */ = {
+			isa = PBXGroup;
+			children = (
 				C073EDF11BB207DD00DE44A7 /* Main.storyboard */,
 				C073EDF41BB207DD00DE44A7 /* Assets.xcassets */,
 				C073EDF61BB207DD00DE44A7 /* LaunchScreen.storyboard */,
 				C073EDF91BB207DD00DE44A7 /* Info.plist */,
+				C073EDFF1BB20B3400DE44A7 /* Buyit-Bridging-Header.h */,
 			);
-			path = Buyit;
+			name = Supporting_File;
+			sourceTree = "<group>";
+		};
+		C073EE0F1BB20CA500DE44A7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C073EDEF1BB207DD00DE44A7 /* ViewController.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -90,6 +134,7 @@
 		C073EDE21BB207DD00DE44A7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = geleichen;
 				TargetAttributes = {
@@ -135,6 +180,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C073EDF01BB207DD00DE44A7 /* ViewController.swift in Sources */,
+				C073EE041BB20B3500DE44A7 /* SEDraggable.m in Sources */,
+				C073EE051BB20B3500DE44A7 /* SEDraggableLocation.m in Sources */,
 				C073EDEE1BB207DD00DE44A7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -248,10 +295,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Buyit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.geleichen.Buyit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Buyit/Buyit-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -259,10 +309,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Buyit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.geleichen.Buyit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Buyit/Buyit-Bridging-Header.h";
 			};
 			name = Release;
 		};
