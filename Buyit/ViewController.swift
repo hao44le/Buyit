@@ -14,10 +14,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var rightView: SEDraggableLocation!
 
     
-    let OBJECT_WIDTH : Float = 50.0
-    let OBJECT_HEIGHT : Float = 50.0
-    let MARGIN_VERTICAL : Float = 10.0
-    let MARGIN_HORIZONTAL : Float = 10.0
+    let OBJECT_WIDTH : Float = Float(ScreenSize.SCREEN_WIDTH / 4 - 45)
+    let OBJECT_HEIGHT : Float = Float(ScreenSize.SCREEN_WIDTH / 4 - 45)
+    let MARGIN_VERTICAL : Float = 0.0
+    let MARGIN_HORIZONTAL : Float = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()

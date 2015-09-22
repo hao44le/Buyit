@@ -14,6 +14,7 @@
 		C073EDF81BB207DD00DE44A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C073EDF61BB207DD00DE44A7 /* LaunchScreen.storyboard */; };
 		C073EE041BB20B3500DE44A7 /* SEDraggable.m in Sources */ = {isa = PBXBuildFile; fileRef = C073EE011BB20B3500DE44A7 /* SEDraggable.m */; settings = {ASSET_TAGS = (); }; };
 		C073EE051BB20B3500DE44A7 /* SEDraggableLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = C073EE031BB20B3500DE44A7 /* SEDraggableLocation.m */; settings = {ASSET_TAGS = (); }; };
+		C073EE111BB219B600DE44A7 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = C073EE101BB219B600DE44A7 /* Utility.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		C073EE011BB20B3500DE44A7 /* SEDraggable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SEDraggable.m; sourceTree = "<group>"; };
 		C073EE021BB20B3500DE44A7 /* SEDraggableLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEDraggableLocation.h; sourceTree = "<group>"; };
 		C073EE031BB20B3500DE44A7 /* SEDraggableLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SEDraggableLocation.m; sourceTree = "<group>"; };
+		C073EE101BB219B600DE44A7 /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 		C073EE0E1BB20C9000DE44A7 /* Supporting_File */ = {
 			isa = PBXGroup;
 			children = (
+				C073EE101BB219B600DE44A7 /* Utility.swift */,
 				C073EDF11BB207DD00DE44A7 /* Main.storyboard */,
 				C073EDF41BB207DD00DE44A7 /* Assets.xcassets */,
 				C073EDF61BB207DD00DE44A7 /* LaunchScreen.storyboard */,
@@ -179,6 +182,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C073EE111BB219B600DE44A7 /* Utility.swift in Sources */,
 				C073EDF01BB207DD00DE44A7 /* ViewController.swift in Sources */,
 				C073EE041BB20B3500DE44A7 /* SEDraggable.m in Sources */,
 				C073EE051BB20B3500DE44A7 /* SEDraggableLocation.m in Sources */,
