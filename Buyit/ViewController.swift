@@ -10,15 +10,19 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var equalConstraint: NSLayoutConstraint!
     @IBOutlet weak var leftView: SEDraggableLocation!
     @IBOutlet weak var rightView: SEDraggableLocation!
 
     
-    let OBJECT_WIDTH : Float = Float(ScreenSize.SCREEN_WIDTH / 4 - 45)
-    let OBJECT_HEIGHT : Float = Float(ScreenSize.SCREEN_WIDTH / 4 - 45)
+    let OBJECT_WIDTH : Float = Float(ScreenSize.SCREEN_HEIGHT / 4 )
+    let OBJECT_HEIGHT : Float = Float(ScreenSize.SCREEN_HEIGHT / 4 )
     let MARGIN_VERTICAL : Float = 0.0
     let MARGIN_HORIZONTAL : Float = 0.0
-    
+    override func updateViewConstraints() {
+        super.updateViewConstraints()
+        self.equalConstraint.constant = -250
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupDraggableLocations()
@@ -71,10 +75,11 @@ class ViewController: UIViewController {
     }
     func setupDraggableObjects(){
 
-        let pngs = ["crocodile", "red-applo", "bryn-applo", "cat", "dog", "monkey", "sheep", "robo-fox", "blue-applo"]
+        let pngs = ["dimedemo", "red-applo", "bryn-applo", "cat", "dog", "monkey", "sheep", "robo-fox", "blue-applo"]
         for  png in pngs {
             let image = UIImageView(image: UIImage(named: png))
-            
+            image.contentMode = UIViewContentMode.ScaleAspectFill
+            image.frame = CGRectMake(0, 0, CGFloat(self.OBJECT_WIDTH), CGFloat(self.OBJECT_HEIGHT))
             let draggable = SEDraggable(imageView: image)
             self.configureDraggableObject(draggable)
             
@@ -83,6 +88,7 @@ class ViewController: UIViewController {
     }
    
     func configureDraggableObject(draggable:SEDraggable){
+        
         draggable.homeLocation = self.leftView
         draggable.addAllowedDropLocation(self.rightView)
         draggable.addAllowedDropLocation(self.leftView)
