@@ -15,10 +15,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var rightView: SEDraggableLocation!
 
     
-    let OBJECT_WIDTH : Float = Float(ScreenSize.SCREEN_HEIGHT / 4 )
-    let OBJECT_HEIGHT : Float = Float(ScreenSize.SCREEN_HEIGHT / 4 )
-    let MARGIN_VERTICAL : Float = 0.0
-    let MARGIN_HORIZONTAL : Float = 0.0
+    let OBJECT_WIDTH : Float = Float(ScreenSize.SCREEN_HEIGHT / 4 - 50)
+    let OBJECT_HEIGHT : Float = Float(ScreenSize.SCREEN_HEIGHT / 4 - 50)
+    let MARGIN_VERTICAL : Float = 10.0
+    let MARGIN_HORIZONTAL : Float = 10.0
     override func updateViewConstraints() {
         super.updateViewConstraints()
         self.equalConstraint.constant = -250
@@ -63,13 +63,15 @@ class ViewController: UIViewController {
         
         // set up auto-arranging behavior
         draggableLocation.shouldKeepObjectsArranged = true
-        draggableLocation.fillHorizontallyFirst = true // NO makes it fill rows first
+        draggableLocation.fillHorizontallyFirst = false // NO makes it fill rows first
         draggableLocation.allowRows = true
         draggableLocation.allowColumns = true
         draggableLocation.shouldAnimateObjectAdjustments = true // if this is set to NO, objects will simply appear instantaneously at their new positions
+        
         draggableLocation.animationDuration = 0.5
         draggableLocation.animationDelay = 0.0
         draggableLocation.animationOptions = UIViewAnimationOptions.LayoutSubviews  // UIViewAnimationOptionBeginFromCurrentState;
+        
         
         draggableLocation.shouldAcceptObjectsSnappingBack = true
     }

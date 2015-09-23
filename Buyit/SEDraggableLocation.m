@@ -165,8 +165,10 @@ const NSInteger SEDraggableLocationPositionDetermineAutomatically = -1;
       break;
   }
   
-  if (allow) [self acceptDraggableObject:draggable entryMethod:entryMethod animated:animated];
-  else       [self refuseDraggableObject:draggable entryMethod:entryMethod animated:animated];
+    if (allow) {
+        [self acceptDraggableObject:draggable entryMethod:entryMethod animated:animated];
+    }
+  else  [self refuseDraggableObject:draggable entryMethod:entryMethod animated:animated];
   
   return allow;
 }
