@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A282b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Hax-KK-VsJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A282b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ZzN-Mj-2qC">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -50,7 +51,13 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="FHV-09-w13"/>
+                    <navigationItem key="navigationItem" id="FHV-09-w13">
+                        <barButtonItem key="leftBarButtonItem" title="Left" id="bY0-VW-5ss">
+                            <connections>
+                                <action selector="presentLeftMenuViewController:" destination="BYZ-38-t0r" id="9qb-q6-03I"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="800"/>
                     <connections>
@@ -63,10 +70,29 @@
             </objects>
             <point key="canvasLocation" x="1117" y="399"/>
         </scene>
+        <!--Left View Controller-->
+        <scene sceneID="62W-pU-u6t">
+            <objects>
+                <viewController storyboardIdentifier="LeftViewController" id="DOK-J8-1K5" customClass="LeftViewController" customModule="Buyit" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="iVC-2B-HCd"/>
+                        <viewControllerLayoutGuide type="bottom" id="u7k-gk-Xfz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cTe-kA-qhE">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pSI-Pc-nDh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-339" y="391"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="rQy-Jj-DHJ">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Hax-KK-VsJ" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="contentViewController" automaticallyAdjustsScrollViewInsets="NO" id="Hax-KK-VsJ" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="1B9-iW-XhD">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -81,6 +107,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pvt-h9-mEF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="305" y="399"/>
+        </scene>
+        <!--Root View Controller-->
+        <scene sceneID="BrT-MP-n68">
+            <objects>
+                <viewController id="ZzN-Mj-2qC" customClass="RootViewController" customModule="Buyit" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gHx-Gf-mHj"/>
+                        <viewControllerLayoutGuide type="bottom" id="v1h-Hw-5Ah"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="54E-AU-LY5">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Xh-rQ-Cul" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-985" y="389"/>
         </scene>
     </scenes>
 </document>
