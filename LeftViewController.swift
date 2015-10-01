@@ -15,7 +15,7 @@ class LeftViewController: UIViewController,UITableViewDataSource,UITableViewDele
     var tableView : UITableView?
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView = UITableView(frame: CGRectMake(0, 60, self.view.frame.size.width, self.view.frame.size.height - 60), style: UITableViewStyle.Plain)
+        tableView = UITableView(frame: CGRectMake(50, 60, self.view.frame.size.width - 50, self.view.frame.size.height - 60), style: UITableViewStyle.Plain)
         //
         tableView!.autoresizingMask = [.FlexibleTopMargin, .FlexibleBottomMargin,.FlexibleWidth]
         tableView!.delegate = self
