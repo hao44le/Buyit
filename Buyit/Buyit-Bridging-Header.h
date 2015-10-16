@@ -5,3 +5,4 @@
 #import "SEDraggable.h"
 #import "SEDraggableLocation.h"
 #import "RESideMenu.h"
+#import "EFCircularSlider.h"

@@ -25,7 +25,7 @@ class RootViewController: RESideMenu,RESideMenuDelegate {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.performSegueWithIdentifier("showWelcome", sender: self)
         // Do any additional setup after loading the view.
     }
 

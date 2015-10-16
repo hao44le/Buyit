@@ -15,6 +15,9 @@
 		C073EE041BB20B3500DE44A7 /* SEDraggable.m in Sources */ = {isa = PBXBuildFile; fileRef = C073EE011BB20B3500DE44A7 /* SEDraggable.m */; settings = {ASSET_TAGS = (); }; };
 		C073EE051BB20B3500DE44A7 /* SEDraggableLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = C073EE031BB20B3500DE44A7 /* SEDraggableLocation.m */; settings = {ASSET_TAGS = (); }; };
 		C073EE111BB219B600DE44A7 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = C073EE101BB219B600DE44A7 /* Utility.swift */; settings = {ASSET_TAGS = (); }; };
+		C0AB53761BD09AAB00DC42A0 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AB53751BD09AAB00DC42A0 /* WelcomeViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		C0AB537F1BD09D8400DC42A0 /* EFCircularSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = C0AB537C1BD09D8400DC42A0 /* EFCircularSlider.m */; settings = {ASSET_TAGS = (); }; };
+		C0AB53801BD09D8400DC42A0 /* EFCircularTrig.m in Sources */ = {isa = PBXBuildFile; fileRef = C0AB537E1BD09D8400DC42A0 /* EFCircularTrig.m */; settings = {ASSET_TAGS = (); }; };
 		C0D4561B1BBB74D100DED0B0 /* RECommonFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D456161BBB74D100DED0B0 /* RECommonFunctions.m */; settings = {ASSET_TAGS = (); }; };
 		C0D4561C1BBB74D100DED0B0 /* RESideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D456181BBB74D100DED0B0 /* RESideMenu.m */; settings = {ASSET_TAGS = (); }; };
 		C0D4561D1BBB74D100DED0B0 /* UIViewController+RESideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D4561A1BBB74D100DED0B0 /* UIViewController+RESideMenu.m */; settings = {ASSET_TAGS = (); }; };
@@ -36,6 +39,11 @@
 		C073EE021BB20B3500DE44A7 /* SEDraggableLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEDraggableLocation.h; sourceTree = "<group>"; };
 		C073EE031BB20B3500DE44A7 /* SEDraggableLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SEDraggableLocation.m; sourceTree = "<group>"; };
 		C073EE101BB219B600DE44A7 /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		C0AB53751BD09AAB00DC42A0 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		C0AB537B1BD09D8400DC42A0 /* EFCircularSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EFCircularSlider.h; sourceTree = "<group>"; };
+		C0AB537C1BD09D8400DC42A0 /* EFCircularSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EFCircularSlider.m; sourceTree = "<group>"; };
+		C0AB537D1BD09D8400DC42A0 /* EFCircularTrig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EFCircularTrig.h; sourceTree = "<group>"; };
+		C0AB537E1BD09D8400DC42A0 /* EFCircularTrig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EFCircularTrig.m; sourceTree = "<group>"; };
 		C0D456151BBB74D100DED0B0 /* RECommonFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RECommonFunctions.h; sourceTree = "<group>"; };
 		C0D456161BBB74D100DED0B0 /* RECommonFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RECommonFunctions.m; sourceTree = "<group>"; };
 		C0D456171BBB74D100DED0B0 /* RESideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RESideMenu.h; sourceTree = "<group>"; };
@@ -87,6 +95,7 @@
 		C073EE061BB20B3A00DE44A7 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				C0AB53811BD09D8800DC42A0 /* EASlider */,
 				C0D4561E1BBB74D500DED0B0 /* RESideMenu */,
 				C073EE071BB20B4300DE44A7 /* SEDraggable */,
 			);
@@ -123,8 +132,20 @@
 				C0D456251BBB7BCE00DED0B0 /* LeftViewController.swift */,
 				C0D456211BBB78B000DED0B0 /* RootViewController.swift */,
 				C073EDEF1BB207DD00DE44A7 /* ViewController.swift */,
+				C0AB53751BD09AAB00DC42A0 /* WelcomeViewController.swift */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		C0AB53811BD09D8800DC42A0 /* EASlider */ = {
+			isa = PBXGroup;
+			children = (
+				C0AB537B1BD09D8400DC42A0 /* EFCircularSlider.h */,
+				C0AB537C1BD09D8400DC42A0 /* EFCircularSlider.m */,
+				C0AB537D1BD09D8400DC42A0 /* EFCircularTrig.h */,
+				C0AB537E1BD09D8400DC42A0 /* EFCircularTrig.m */,
+			);
+			name = EASlider;
 			sourceTree = "<group>";
 		};
 		C0D4561E1BBB74D500DED0B0 /* RESideMenu */ = {
@@ -213,11 +234,14 @@
 			files = (
 				C073EE111BB219B600DE44A7 /* Utility.swift in Sources */,
 				C0D4561D1BBB74D100DED0B0 /* UIViewController+RESideMenu.m in Sources */,
+				C0AB53761BD09AAB00DC42A0 /* WelcomeViewController.swift in Sources */,
 				C0D4561B1BBB74D100DED0B0 /* RECommonFunctions.m in Sources */,
+				C0AB53801BD09D8400DC42A0 /* EFCircularTrig.m in Sources */,
 				C0D456261BBB7BCE00DED0B0 /* LeftViewController.swift in Sources */,
 				C073EDF01BB207DD00DE44A7 /* ViewController.swift in Sources */,
 				C073EE041BB20B3500DE44A7 /* SEDraggable.m in Sources */,
 				C073EE051BB20B3500DE44A7 /* SEDraggableLocation.m in Sources */,
+				C0AB537F1BD09D8400DC42A0 /* EFCircularSlider.m in Sources */,
 				C0D456221BBB78B000DED0B0 /* RootViewController.swift in Sources */,
 				C073EDEE1BB207DD00DE44A7 /* AppDelegate.swift in Sources */,
 				C0D4561C1BBB74D100DED0B0 /* RESideMenu.m in Sources */,
