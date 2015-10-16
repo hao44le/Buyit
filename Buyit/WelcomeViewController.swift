@@ -15,9 +15,11 @@ class WelcomeViewController: UIViewController {
     @IBOutlet weak var startButton: UIButton!
     
     @IBAction func startClicked(sender: UIButton) {
-        self.performSegueWithIdentifier("toMain", sender: self)
+        NSUserDefaults.standardUserDefaults().setInteger(Int(self.timeLabel.text!)!, forKey: "difficulty")
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     override func viewDidLoad() {
+        NSUserDefaults.standardUserDefaults().setBool(true, forKey: "welcomeVisited")
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(red: 31/255, green: 61/255, blue: 91/255, alpha: 1)
         timeLabel.text = "1"

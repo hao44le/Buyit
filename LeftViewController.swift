@@ -9,13 +9,27 @@
 import UIKit
 
 class LeftViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
-
-    let titles = ["Money Recognition", "Money Addition",  "Money Game"]
-    let images =  [ "IconHome",  "IconCalendar",  "IconProfile"]
+    
+    let titles = ["Money Recognition", "Money Addition",  "Money Game", "Setting"]
+    let images =  [ "IconHome",  "IconCalendar",  "IconProfile","IconProfile"]
     var tableView : UITableView?
+    var label : UILabel?
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        
+        
+        
+        label = UILabel(frame: CGRectMake(100, 40, self.view.frame.size.width / 2, 30))
+        label?.textColor = UIColor.whiteColor()
+        label?.font = UIFont.systemFontOfSize(30)
+        label!.textAlignment = NSTextAlignment.Center
+        self.view.addSubview(label!)
+        
+        
         tableView = UITableView(frame: CGRectMake(50, 60, self.view.frame.size.width - 50, self.view.frame.size.height - 60), style: UITableViewStyle.Plain)
+        
         //
         tableView!.autoresizingMask = [.FlexibleTopMargin, .FlexibleBottomMargin,.FlexibleWidth]
         tableView!.delegate = self
@@ -35,6 +49,14 @@ class LeftViewController: UIViewController,UITableViewDataSource,UITableViewDele
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.tableView!.reloadData()
+        let diff  = NSUserDefaults.standardUserDefaults().integerForKey("difficulty")
+        if  diff != 0 {
+            
+            label?.text = "Difficulty Level : \(diff)"
+            
+        } else {
+            label?.text = "Difficulty Level : 1"
+        }
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -62,24 +84,38 @@ class LeftViewController: UIViewController,UITableViewDataSource,UITableViewDele
         }
         
     }
-
+    
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 200
+        return 170
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        switch indexPath.row {
+        case 0:
+            print("Money Recognition")
+        case 1:
+            print("Money Addition")
+        case 2:
+            print("Money Game")
+        case 3:
+            self.performSegueWithIdentifier("toWelcome", sender: self)
+        default:
+            break
+        }
+    }
     
-
+    
     /*
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // Get the new view controller using segue.destinationViewController.
+    // Pass the selected object to the new view controller.
     }
     */
-
+    
 }

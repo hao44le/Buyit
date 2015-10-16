@@ -25,8 +25,15 @@ class RootViewController: RESideMenu,RESideMenuDelegate {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.performSegueWithIdentifier("showWelcome", sender: self)
+        
         // Do any additional setup after loading the view.
+    }
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        if !NSUserDefaults.standardUserDefaults().boolForKey("welcomeVisited") {
+            self.performSegueWithIdentifier("toWelcome", sender: self)
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {

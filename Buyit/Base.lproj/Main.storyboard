@@ -68,7 +68,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="648" y="364.5"/>
+            <point key="canvasLocation" x="-48" y="364.5"/>
         </scene>
         <!--Left View Controller-->
         <scene sceneID="62W-pU-u6t">
@@ -84,10 +84,13 @@
                         <animations/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <segue destination="T1B-KK-WAB" kind="presentation" identifier="toWelcome" id="t2A-hD-mou"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pSI-Pc-nDh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1689" y="-356.25"/>
+            <point key="canvasLocation" x="-855" y="-392.25"/>
         </scene>
         <!--Welcome View Controller-->
         <scene sceneID="jNV-Va-VE3">
@@ -226,12 +229,11 @@
                     <connections>
                         <outlet property="startButton" destination="y3q-ic-y8J" id="evd-lf-flm"/>
                         <outlet property="timeLabel" destination="lc9-Zr-aWj" id="ssb-0v-paz"/>
-                        <segue destination="Hax-KK-VsJ" kind="show" identifier="toMain" id="F23-lj-JFi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wSZ-X1-9Mt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-947.25" y="364.5"/>
+            <point key="canvasLocation" x="-1655.25" y="-375"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="rQy-Jj-DHJ">
@@ -250,7 +252,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pvt-h9-mEF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-164.25" y="364.5"/>
+            <point key="canvasLocation" x="-860.25" y="364.5"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="BrT-MP-n68">
@@ -266,6 +268,9 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <segue destination="T1B-KK-WAB" kind="presentation" identifier="toWelcome" id="0ap-Br-dtc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Xh-rQ-Cul" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -275,4 +280,7 @@
     <resources>
         <image name="One_dollar_bill" width="608" height="264"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="t2A-hD-mou"/>
+    </inferredMetricsTieBreakers>
 </document>
