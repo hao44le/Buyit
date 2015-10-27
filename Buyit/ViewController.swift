@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController,SEDraggableEventResponder {
     
     @IBOutlet weak var equalConstraint: NSLayoutConstraint!
     @IBOutlet weak var leftView: SEDraggableLocation!
@@ -26,6 +26,7 @@ class ViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.setupDraggableLocations()
         self.setupDraggableObjects()
         self.setupViewOnRight()
@@ -117,6 +118,7 @@ class ViewController: UIViewController {
             image.contentMode = UIViewContentMode.ScaleAspectFit
             image.frame = CGRectMake(0, 0, CGFloat(self.OBJECT_WIDTH), CGFloat(self.OBJECT_HEIGHT))
             let draggable = SEDraggable(imageView: image)
+            draggable.delegate = self
             self.configureDraggableObject(draggable)
             
         }
@@ -132,9 +134,11 @@ class ViewController: UIViewController {
         
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func draggableObject(object: SEDraggable!, finishedEnteringLocation location: SEDraggableLocation!, withEntryMethod entryMethod: SEDraggableLocationEntryMethod) {
+        if location == self.rightView {
+            showSuccess()
+        }
     }
 
 
