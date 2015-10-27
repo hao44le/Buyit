@@ -59,7 +59,7 @@
                                 <animations/>
                                 <state key="normal" image="left button"/>
                                 <connections>
-                                    <action selector="presentLeftMenuViewController:" destination="BYZ-38-t0r" eventType="touchDownRepeat" id="rGP-P9-kz6"/>
+                                    <action selector="presentLeftMenuViewController:" destination="BYZ-38-t0r" eventType="touchDownRepeat" id="SAn-zv-H5W"/>
                                 </connections>
                             </button>
                         </barButtonItem>

@@ -15,26 +15,49 @@ class ViewController: UIViewController {
     @IBOutlet weak var rightView: SEDraggableLocation!
 
     
-    let OBJECT_WIDTH : Float = Float(ScreenSize.SCREEN_HEIGHT / 4 - 50)
-    let OBJECT_HEIGHT : Float = Float(ScreenSize.SCREEN_HEIGHT / 4 - 50)
+    let OBJECT_WIDTH : Float = Float(ScreenSize.SCREEN_HEIGHT / 2)
+    let OBJECT_HEIGHT : Float = Float(ScreenSize.SCREEN_HEIGHT / 2 )
     let MARGIN_VERTICAL : Float = 10.0
     let MARGIN_HORIZONTAL : Float = 10.0
     
     override func updateViewConstraints() {
         super.updateViewConstraints()
-        self.equalConstraint.constant = -250
+        self.equalConstraint.constant = 100
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.setupDraggableLocations()
         self.setupDraggableObjects()
+        self.setupViewOnRight()
+        
+
         // Do any additional setup after loading the view, typically from a nib.
     }
     override func viewWillAppear(animated: Bool) {
         if let name = NSUserDefaults.standardUserDefaults().stringForKey("userSelection") {
             self.navigationItem.title = name
         }
+    }
+    func showSuccess(){
+        let alert: SCLAlertView = SCLAlertView()
+        self.navigationItem.leftBarButtonItem?.enabled = false
+        
+        alert.addButton("OK") { () -> Void in
+            self.navigationItem.leftBarButtonItem?.enabled = true
+        }
+        alert.addTimerToButtonIndex(0, reverse: true)
+        alert.showSuccess(self, title: "Congratulation", subTitle: "Next Game", closeButtonTitle: nil, duration: 3.0)
+
+    }
+    
+    func setupViewOnRight(){
+        let label = UILabel(frame: CGRectMake(self.rightView.frame.width / 2 , ScreenSize.SCREEN_HEIGHT / 2 - 80, 80, 80))
+        label.textAlignment = NSTextAlignment.Center
+        label.text = "$5"
+        label.font = UIFont.systemFontOfSize(40)
+        self.rightView.addSubview(label)
+        
+
     }
     
     
@@ -85,10 +108,13 @@ class ViewController: UIViewController {
     }
     func setupDraggableObjects(){
 
-        let pngs = ["dimedemo", "red-applo", "bryn-applo", "cat", "dog", "monkey", "sheep", "robo-fox", "blue-applo"]
+        let pngs = ["Five_dollar_bill"]
         for  png in pngs {
+            
+            
             let image = UIImageView(image: UIImage(named: png))
-            image.contentMode = UIViewContentMode.ScaleAspectFill
+            
+            image.contentMode = UIViewContentMode.ScaleAspectFit
             image.frame = CGRectMake(0, 0, CGFloat(self.OBJECT_WIDTH), CGFloat(self.OBJECT_HEIGHT))
             let draggable = SEDraggable(imageView: image)
             self.configureDraggableObject(draggable)
