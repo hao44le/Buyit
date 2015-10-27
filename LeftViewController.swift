@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LeftViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
+class LeftViewController: UIViewController,UITableViewDataSource,UITableViewDelegate,RESideMenuDelegate {
     
     let titles = ["Money Recognition", "Money Addition",  "Money Game", "Setting"]
     let images =  [ "IconHome",  "IconCalendar",  "IconProfile","IconProfile"]
@@ -95,11 +95,20 @@ class LeftViewController: UIViewController,UITableViewDataSource,UITableViewDele
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         switch indexPath.row {
         case 0:
-            print("Money Recognition")
+            //print("Money Recognition")
+            self.sideMenuViewController.setContentViewController(self.storyboard?.instantiateViewControllerWithIdentifier("contentViewController"), animated: true)
+           NSUserDefaults.standardUserDefaults().setObject("Money Recognition", forKey: "userSelection")
+            self.sideMenuViewController.hideMenuViewController()
         case 1:
-            print("Money Addition")
+            //print("Money Addition")
+            self.sideMenuViewController.setContentViewController(self.storyboard?.instantiateViewControllerWithIdentifier("contentViewController"), animated: true)
+            NSUserDefaults.standardUserDefaults().setObject("Money Addition", forKey: "userSelection")
+            self.sideMenuViewController.hideMenuViewController()
         case 2:
-            print("Money Game")
+            //print("Money Game")
+            self.sideMenuViewController.setContentViewController(self.storyboard?.instantiateViewControllerWithIdentifier("contentViewController"), animated: true)
+            NSUserDefaults.standardUserDefaults().setObject("Money Game", forKey: "userSelection")
+            self.sideMenuViewController.hideMenuViewController()
         case 3:
             self.performSegueWithIdentifier("toWelcome", sender: self)
         default:

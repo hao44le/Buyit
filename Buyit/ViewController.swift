@@ -19,16 +19,24 @@ class ViewController: UIViewController {
     let OBJECT_HEIGHT : Float = Float(ScreenSize.SCREEN_HEIGHT / 4 - 50)
     let MARGIN_VERTICAL : Float = 10.0
     let MARGIN_HORIZONTAL : Float = 10.0
+    
     override func updateViewConstraints() {
         super.updateViewConstraints()
         self.equalConstraint.constant = -250
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.setupDraggableLocations()
         self.setupDraggableObjects()
         // Do any additional setup after loading the view, typically from a nib.
     }
+    override func viewWillAppear(animated: Bool) {
+        if let name = NSUserDefaults.standardUserDefaults().stringForKey("userSelection") {
+            self.navigationItem.title = name
+        }
+    }
+    
     
     func setupDraggableLocations(){
         self.leftView.backgroundColor = UIColor.clearColor()
