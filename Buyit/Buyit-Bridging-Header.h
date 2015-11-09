@@ -8,3 +8,5 @@
 #import "EFCircularSlider.h"
 #import "SCLAlertView.h"
 
+#import "CCMPopupSegue.h"
+#import "CCMPopupTransitioning.h"

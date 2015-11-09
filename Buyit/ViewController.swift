@@ -40,15 +40,17 @@ class ViewController: UIViewController,SEDraggableEventResponder {
         }
     }
     func showSuccess(){
-        let alert: SCLAlertView = SCLAlertView()
+//        let alert: SCLAlertView = SCLAlertView()
         self.navigationItem.leftBarButtonItem?.enabled = false
         
-        alert.addButton("OK") { () -> Void in
-            self.navigationItem.leftBarButtonItem?.enabled = true
-        }
-        alert.addTimerToButtonIndex(0, reverse: true)
-        alert.showSuccess(self, title: "Congratulation", subTitle: "Next Game", closeButtonTitle: nil, duration: 3.0)
+//        alert.addButton("OK") { () -> Void in
+//            self.navigationItem.leftBarButtonItem?.enabled = true
+//        }
+//        alert.addTimerToButtonIndex(0, reverse: true)
+//        alert.showSuccess(self, title: "Congratulation", subTitle: "Next Game", closeButtonTitle: nil, duration: 3.0)
 
+        self.performSegueWithIdentifier("toPopup", sender: self)
+        
     }
     
     func setupViewOnRight(){
@@ -141,6 +143,15 @@ class ViewController: UIViewController,SEDraggableEventResponder {
         }
     }
 
-
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "toPopup" {
+            
+            let popupSegue = segue as! CCMPopupSegue
+            popupSegue.destinationBounds = CGRectMake(0, 0, 800, 600)
+            popupSegue.backgroundBlurRadius = 7
+            popupSegue.backgroundViewAlpha = 0.3
+            popupSegue.dismissableByTouchingBackground = true
+        }
+    }
 }
 

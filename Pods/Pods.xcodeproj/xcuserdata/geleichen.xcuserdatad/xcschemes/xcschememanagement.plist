@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>CCMPopup.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -17,12 +22,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>4EE02651502465236FAEF992FE23D342</key>
+		<key>60B22ED07090232C89A52F8200980151</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>911E9CF52D8BCF9AE6914B26BA7D6320</key>
+		<key>A0F21BB55D7417CB946DAF18EFE8DB4F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BB5F8984A372414832A6E4878E57C98E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
