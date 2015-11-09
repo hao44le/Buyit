@@ -15,10 +15,11 @@ class ViewController: UIViewController,SEDraggableEventResponder {
     @IBOutlet weak var rightView: SEDraggableLocation!
 
     
-    let OBJECT_WIDTH : Float = Float(ScreenSize.SCREEN_HEIGHT / 2)
-    let OBJECT_HEIGHT : Float = Float(ScreenSize.SCREEN_HEIGHT / 2 )
+    let OBJECT_WIDTH : Float = Float(ScreenSize.SCREEN_HEIGHT / 2 )
+    let OBJECT_HEIGHT : Float = Float(150)
     let MARGIN_VERTICAL : Float = 10.0
     let MARGIN_HORIZONTAL : Float = 10.0
+    var success = false
     
     override func updateViewConstraints() {
         super.updateViewConstraints()
@@ -41,7 +42,6 @@ class ViewController: UIViewController,SEDraggableEventResponder {
     }
     func showSuccess(){
 //        let alert: SCLAlertView = SCLAlertView()
-        self.navigationItem.leftBarButtonItem?.enabled = false
         
 //        alert.addButton("OK") { () -> Void in
 //            self.navigationItem.leftBarButtonItem?.enabled = true
@@ -97,7 +97,7 @@ class ViewController: UIViewController,SEDraggableEventResponder {
         
         // set up auto-arranging behavior
         draggableLocation.shouldKeepObjectsArranged = true
-        draggableLocation.fillHorizontallyFirst = false // NO makes it fill rows first
+        draggableLocation.fillHorizontallyFirst = true // NO makes it fill rows first
         draggableLocation.allowRows = true
         draggableLocation.allowColumns = true
         draggableLocation.shouldAnimateObjectAdjustments = true // if this is set to NO, objects will simply appear instantaneously at their new positions
@@ -111,7 +111,7 @@ class ViewController: UIViewController,SEDraggableEventResponder {
     }
     func setupDraggableObjects(){
 
-        let pngs = ["Five_dollar_bill"]
+        let pngs = ["Five_dollar_bill","One_dollar_bill","Ten_dollar_bill","Twenty_dollar_bill"]
         for  png in pngs {
             
             
@@ -121,6 +121,7 @@ class ViewController: UIViewController,SEDraggableEventResponder {
             image.frame = CGRectMake(0, 0, CGFloat(self.OBJECT_WIDTH), CGFloat(self.OBJECT_HEIGHT))
             let draggable = SEDraggable(imageView: image)
             draggable.delegate = self
+            draggable.name = png
             self.configureDraggableObject(draggable)
             
         }
@@ -138,19 +139,27 @@ class ViewController: UIViewController,SEDraggableEventResponder {
 
     
     func draggableObject(object: SEDraggable!, finishedEnteringLocation location: SEDraggableLocation!, withEntryMethod entryMethod: SEDraggableLocationEntryMethod) {
+        //print(object)
         if location == self.rightView {
-            showSuccess()
+            if object.name == "Five_dollar_bill" {
+                self.success = true
+                showSuccess()
+            } else {
+                self.success = false
+                showSuccess()
+            }
         }
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "toPopup" {
-            
+            let vc = segue.destinationViewController as! MenuViewController
             let popupSegue = segue as! CCMPopupSegue
             popupSegue.destinationBounds = CGRectMake(0, 0, 800, 600)
             popupSegue.backgroundBlurRadius = 7
             popupSegue.backgroundViewAlpha = 0.3
             popupSegue.dismissableByTouchingBackground = true
+            vc.success = self.success
         }
     }
 }

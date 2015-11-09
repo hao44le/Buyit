@@ -9,19 +9,25 @@
 import UIKit
 
 class MenuViewController: UIViewController {
-
+    var success = true
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor.clearColor()
         let imageView = UIImageView(frame: CGRectMake(0, 0, 800, 600))
-        imageView.animationImages = [UIImage(named: "firework1")!,UIImage(named: "firework2")!,UIImage(named: "firework3")!,UIImage(named: "firework4")!]
-        imageView.animationDuration = 3
+        if success {
+           imageView.animationImages = [UIImage(named: "firework5")!,UIImage(named: "firework1")!,UIImage(named: "firework2")!,UIImage(named: "firework3")!,UIImage(named: "firework4")!]
+        } else {
+            imageView.animationImages = [UIImage(named: "fail1")!,UIImage(named: "fail2")!,UIImage(named: "fail3")!,UIImage(named: "fail4")!]
+        }
+        imageView.contentMode = UIViewContentMode.ScaleAspectFit
+        imageView.animationDuration = 5
         imageView.animationRepeatCount = 0
         imageView.startAnimating()
         imageView.layer.cornerRadius = 10
         imageView.clipsToBounds = true
         self.view.addSubview(imageView)
         
-         NSTimer.scheduledTimerWithTimeInterval(4, target: self, selector: "dismiss", userInfo: nil, repeats: false)
+         NSTimer.scheduledTimerWithTimeInterval(6, target: self, selector: "dismiss", userInfo: nil, repeats: false)
         
         // Do any additional setup after loading the view.
     }

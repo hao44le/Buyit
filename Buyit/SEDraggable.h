@@ -55,6 +55,7 @@
   BOOL _shouldSnapBackToDragOrigin;
   CGFloat firstX;
   CGFloat firstY;
+  NSString *_name;
   id <SEDraggableEventResponder> __unsafe_unretained _delegate;
 }
 
@@ -68,6 +69,7 @@
 @property (nonatomic, readwrite) BOOL shouldSnapBackToDragOrigin;
 @property (nonatomic, readonly) CGFloat firstX;
 @property (nonatomic, readonly) CGFloat firstY;
+@property (nonatomic, readwrite) NSString *name;
 
 - (id) initWithImage:(UIImage *)image andSize:(CGSize)size;
 - (id) initWithImageView:(UIImageView *)imageView;
