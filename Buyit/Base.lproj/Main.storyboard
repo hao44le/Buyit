@@ -391,6 +391,95 @@
             </objects>
             <point key="canvasLocation" x="805" y="-180"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="kJD-e6-ViY">
+            <objects>
+                <navigationController storyboardIdentifier="moneyAddition" automaticallyAdjustsScrollViewInsets="NO" id="FuD-YM-KVD" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Jt3-ae-jt9">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="0pm-ze-5mR" kind="relationship" relationship="rootViewController" id="Asx-nu-xAI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WBC-wT-gL6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-848" y="1296"/>
+        </scene>
+        <!--Money Addition-->
+        <scene sceneID="zxp-ZN-vJb">
+            <objects>
+                <viewController id="0pm-ze-5mR" customClass="MoneyAdditionViewController" customModule="Buyit" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FI5-Ai-j2W"/>
+                        <viewControllerLayoutGuide type="bottom" id="tRg-7e-Fke"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Pie-Gc-dwj">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="800"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C12-WU-fwh" customClass="SEDraggableLocation">
+                                <rect key="frame" x="0.0" y="64" width="300" height="736"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tYE-yv-O1j" customClass="SEDraggableLocation">
+                                <rect key="frame" x="300" y="214" width="300" height="586"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="C12-WU-fwh" firstAttribute="top" secondItem="Pie-Gc-dwj" secondAttribute="top" constant="64" id="9Uc-Kc-g94"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="C12-WU-fwh" secondAttribute="trailing" constant="280" id="Jl3-fD-snX"/>
+                            <constraint firstItem="C12-WU-fwh" firstAttribute="leading" secondItem="Pie-Gc-dwj" secondAttribute="leading" id="Lse-7y-lco"/>
+                            <constraint firstItem="tYE-yv-O1j" firstAttribute="width" secondItem="C12-WU-fwh" secondAttribute="width" id="RhQ-ox-bmk"/>
+                            <constraint firstItem="tYE-yv-O1j" firstAttribute="leading" secondItem="C12-WU-fwh" secondAttribute="trailing" id="SRK-ax-wTu"/>
+                            <constraint firstItem="C12-WU-fwh" firstAttribute="bottom" secondItem="tRg-7e-Fke" secondAttribute="top" id="YR3-GQ-ECL"/>
+                            <constraint firstItem="C12-WU-fwh" firstAttribute="bottom" secondItem="tYE-yv-O1j" secondAttribute="bottom" id="boP-d4-uJp"/>
+                            <constraint firstItem="C12-WU-fwh" firstAttribute="top" secondItem="tYE-yv-O1j" secondAttribute="top" constant="-150" id="dWa-SH-2P6"/>
+                            <constraint firstAttribute="trailing" secondItem="tYE-yv-O1j" secondAttribute="trailing" id="r3E-SF-KwP"/>
+                            <constraint firstAttribute="trailing" secondItem="C12-WU-fwh" secondAttribute="trailing" constant="300" id="vUI-iQ-dyN"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="vUI-iQ-dyN"/>
+                                <exclude reference="Jl3-fD-snX"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" title="Money Addition" id="eGf-zg-tIU">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="5Ob-4m-6tl">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="9Fd-LX-UF6">
+                                <rect key="frame" x="20" y="7" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                                <state key="normal" image="left button"/>
+                                <connections>
+                                    <action selector="presentLeftMenuViewController:" destination="0pm-ze-5mR" eventType="touchDownRepeat" id="26g-N6-aCl"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="800"/>
+                    <connections>
+                        <outlet property="equalConstraint" destination="RhQ-ox-bmk" id="bSk-qr-QzC"/>
+                        <outlet property="leftView" destination="C12-WU-fwh" id="R1E-DW-JhB"/>
+                        <outlet property="rightView" destination="tYE-yv-O1j" id="a45-QI-bH6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OAe-Zy-pPY" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-51" y="1355"/>
+        </scene>
     </scenes>
     <resources>
         <image name="left button" width="25" height="25"/>

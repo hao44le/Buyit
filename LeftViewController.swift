@@ -101,7 +101,7 @@ class LeftViewController: UIViewController,UITableViewDataSource,UITableViewDele
             self.sideMenuViewController.hideMenuViewController()
         case 1:
             //print("Money Addition")
-            self.sideMenuViewController.setContentViewController(self.storyboard?.instantiateViewControllerWithIdentifier("contentViewController"), animated: true)
+            self.sideMenuViewController.setContentViewController(self.storyboard?.instantiateViewControllerWithIdentifier("moneyAddition"), animated: true)
             NSUserDefaults.standardUserDefaults().setObject("Money Addition", forKey: "userSelection")
             self.sideMenuViewController.hideMenuViewController()
         case 2:

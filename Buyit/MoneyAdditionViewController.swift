@@ -8,24 +8,26 @@
 
 import UIKit
 
-class ViewController: UIViewController,SEDraggableEventResponder {
+class MoneyAdditionViewController: UIViewController,SEDraggableEventResponder {
     
     @IBOutlet weak var equalConstraint: NSLayoutConstraint!
     @IBOutlet weak var leftView: SEDraggableLocation!
     @IBOutlet weak var rightView: SEDraggableLocation!
-
+    
     
     let OBJECT_WIDTH : Float = Float(ScreenSize.SCREEN_HEIGHT / 2 )
     let OBJECT_HEIGHT : Float = Float(150)
     let MARGIN_VERTICAL : Float = 10.0
     let MARGIN_HORIZONTAL : Float = 10.0
-    var success = false
+    var moneyLabel : UILabel!
+    var totalAmount  = 0
     
     override func updateViewConstraints() {
         super.updateViewConstraints()
         self.equalConstraint.constant = 100
     }
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         self.setupDraggableLocations()
         self.setupDraggableObjects()
@@ -33,7 +35,7 @@ class ViewController: UIViewController,SEDraggableEventResponder {
         
         
         
-
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
     override func viewWillAppear(animated: Bool) {
@@ -41,30 +43,43 @@ class ViewController: UIViewController,SEDraggableEventResponder {
             self.navigationItem.title = name
         }
     }
-    func showSuccess(){
-        self.performSegueWithIdentifier("toPopup", sender: self)
-    }
     
     func setupViewOnRight(){
-        let label = UILabel(frame: CGRectMake(self.rightView.frame.width / 2 , ScreenSize.SCREEN_HEIGHT / 2 - 80, 80, 80))
-        label.textAlignment = NSTextAlignment.Center
-        label.text = "$5"
-        label.font = UIFont.systemFontOfSize(40)
-        self.rightView.addSubview(label)
         
-
+        let upperView = UIView(frame: CGRectMake(self.leftView.frame.width + 162,64,ScreenSize.SCREEN_WIDTH - self.leftView.frame.width - 162,150))
+        upperView.backgroundColor = UIColor.orangeColor()
+        
+        moneyLabel = UILabel(frame: CGRectMake(upperView.frame.width - 100 , 50, 100, 50))
+        moneyLabel.textAlignment = NSTextAlignment.Left
+        moneyLabel.text = "$"
+        moneyLabel.textColor = UIColor.whiteColor()
+        moneyLabel.font = UIFont.systemFontOfSize(50)
+        upperView.addSubview(moneyLabel)
+        
+        let priceLabel = UILabel(frame: CGRectMake(50,50,200,50))
+        priceLabel.textAlignment = NSTextAlignment.Center
+        priceLabel.text = "TOTAL PRICE"
+        priceLabel.textColor = UIColor.whiteColor()
+        priceLabel.font = UIFont.systemFontOfSize(20)
+        upperView.addSubview(priceLabel)
+        
+        self.view.addSubview(upperView)
+        
     }
     
     
     func setupDraggableLocations(){
         self.leftView.backgroundColor = UIColor.clearColor()
         self.rightView.backgroundColor = UIColor.clearColor()
+        self.leftView.layer.borderColor = UIColor.blueColor().CGColor
+        self.leftView.layer.borderWidth = 3
+        self.leftView.clipsToBounds = false
         self.configureDraggableLocation(self.leftView)
         self.configureDraggableLocation(self.rightView)
     }
     
     func configureDraggableLocation(draggableLocation:SEDraggableLocation){
-
+        
         // set the width and height of the objects to be contained in this SEDraggableLocation (for spacing/arrangement purposes)
         draggableLocation.objectWidth = OBJECT_WIDTH;
         draggableLocation.objectHeight = OBJECT_HEIGHT;
@@ -102,7 +117,7 @@ class ViewController: UIViewController,SEDraggableEventResponder {
         draggableLocation.shouldAcceptObjectsSnappingBack = true
     }
     func setupDraggableObjects(){
-
+        
         let pngs = ["Five_dollar_bill","One_dollar_bill","Ten_dollar_bill","Twenty_dollar_bill"]
         for  png in pngs {
             
@@ -117,9 +132,9 @@ class ViewController: UIViewController,SEDraggableEventResponder {
             self.configureDraggableObject(draggable)
             
         }
-
+        
     }
-   
+    
     func configureDraggableObject(draggable:SEDraggable){
         
         draggable.homeLocation = self.leftView
@@ -132,27 +147,53 @@ class ViewController: UIViewController,SEDraggableEventResponder {
     
     func draggableObject(object: SEDraggable!, finishedEnteringLocation location: SEDraggableLocation!, withEntryMethod entryMethod: SEDraggableLocationEntryMethod) {
         //print(object)
-        if location == self.rightView {
-            if object.name == "Five_dollar_bill" {
-                self.success = true
-                showSuccess()
-            } else {
-                self.success = false
-                showSuccess()
+        if object.previousLocation != nil {
+//            print(object.currentLocation)
+//            print(object.previousLocation)
+            if (object.currentLocation == self.rightView) && (object.previousLocation == self.leftView) {
+                switch object.name {
+                case "Five_dollar_bill" :
+                    self.totalAmount += 5
+                case "One_dollar_bill" :
+                    self.totalAmount += 1
+                case "Ten_dollar_bill" :
+                    self.totalAmount += 10
+                case "Twenty_dollar_bill" :
+                    self.totalAmount += 20
+                default:
+                    break
+                }
+                self.updateLabelName()
+                
+            } else if (object.currentLocation == self.leftView) && (object.previousLocation == self.rightView) {
+                switch object.name {
+                case "Five_dollar_bill" :
+                    self.totalAmount -= 5
+                case "One_dollar_bill" :
+                    self.totalAmount -= 1
+                case "Ten_dollar_bill" :
+                    self.totalAmount -= 10
+                case "Twenty_dollar_bill" :
+                    self.totalAmount -= 20
+                default:
+                    break
+                }
+                self.updateLabelName()
             }
-        }
-    }
 
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "toPopup" {
-            let vc = segue.destinationViewController as! MenuViewController
-            let popupSegue = segue as! CCMPopupSegue
-            popupSegue.destinationBounds = CGRectMake(0, 0, 800, 600)
-            popupSegue.backgroundBlurRadius = 7
-            popupSegue.backgroundViewAlpha = 0.3
-            popupSegue.dismissableByTouchingBackground = true
-            vc.success = self.success
         }
+        
+    }
+    
+    func updateLabelName(){
+        if (self.moneyLabel != nil) {
+            self.moneyLabel.text = "\(totalAmount)$"
+        }
+        
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
     }
 }
 

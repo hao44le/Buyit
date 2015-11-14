@@ -25,6 +25,7 @@
 		C0D4561D1BBB74D100DED0B0 /* UIViewController+RESideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D4561A1BBB74D100DED0B0 /* UIViewController+RESideMenu.m */; };
 		C0D456221BBB78B000DED0B0 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D456211BBB78B000DED0B0 /* RootViewController.swift */; };
 		C0D456261BBB7BCE00DED0B0 /* LeftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D456251BBB7BCE00DED0B0 /* LeftViewController.swift */; };
+		C0F52C541BF7843600CC277A /* MoneyAdditionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F52C531BF7843600CC277A /* MoneyAdditionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		C0D4561A1BBB74D100DED0B0 /* UIViewController+RESideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+RESideMenu.m"; sourceTree = "<group>"; };
 		C0D456211BBB78B000DED0B0 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RootViewController.swift; path = ../RootViewController.swift; sourceTree = "<group>"; };
 		C0D456251BBB7BCE00DED0B0 /* LeftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LeftViewController.swift; path = ../LeftViewController.swift; sourceTree = "<group>"; };
+		C0F52C531BF7843600CC277A /* MoneyAdditionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoneyAdditionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +162,7 @@
 				C073EDEF1BB207DD00DE44A7 /* ViewController.swift */,
 				C007E0821BF12D050053021F /* MenuViewController.swift */,
 				C0AB53751BD09AAB00DC42A0 /* WelcomeViewController.swift */,
+				C0F52C531BF7843600CC277A /* MoneyAdditionViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -312,6 +315,7 @@
 			files = (
 				C073EE111BB219B600DE44A7 /* Utility.swift in Sources */,
 				C0D4561D1BBB74D100DED0B0 /* UIViewController+RESideMenu.m in Sources */,
+				C0F52C541BF7843600CC277A /* MoneyAdditionViewController.swift in Sources */,
 				C0AB53761BD09AAB00DC42A0 /* WelcomeViewController.swift in Sources */,
 				C007E0831BF12D050053021F /* MenuViewController.swift in Sources */,
 				C0D4561B1BBB74D100DED0B0 /* RECommonFunctions.m in Sources */,
