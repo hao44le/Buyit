@@ -147,6 +147,7 @@ class MoneyAdditionViewController: UIViewController,SEDraggableEventResponder {
     
     func draggableObject(object: SEDraggable!, finishedEnteringLocation location: SEDraggableLocation!, withEntryMethod entryMethod: SEDraggableLocationEntryMethod) {
         //print(object)
+        //one line for testing
         if object.previousLocation != nil {
 //            print(object.currentLocation)
 //            print(object.previousLocation)
