@@ -450,8 +450,8 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="vUI-iQ-dyN"/>
                                 <exclude reference="Jl3-fD-snX"/>
+                                <exclude reference="vUI-iQ-dyN"/>
                             </mask>
                         </variation>
                     </view>
@@ -485,6 +485,6 @@
         <image name="left button" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="t2A-hD-mou"/>
+        <segue reference="0ap-Br-dtc"/>
     </inferredMetricsTieBreakers>
 </document>

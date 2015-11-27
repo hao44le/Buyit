@@ -26,16 +26,14 @@ class ViewController: UIViewController,SEDraggableEventResponder {
         self.equalConstraint.constant = 100
     }
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         self.setupDraggableLocations()
         self.setupDraggableObjects()
         self.setupViewOnRight()
-        
-        
-        
 
-        // Do any additional setup after loading the view, typically from a nib.
     }
+    
     override func viewWillAppear(animated: Bool) {
         if let name = NSUserDefaults.standardUserDefaults().stringForKey("userSelection") {
             self.navigationItem.title = name
@@ -46,7 +44,7 @@ class ViewController: UIViewController,SEDraggableEventResponder {
     }
     
     func setupViewOnRight(){
-        let label = UILabel(frame: CGRectMake(self.rightView.frame.width / 2 , ScreenSize.SCREEN_HEIGHT / 2 - 80, 80, 80))
+        let label = UILabel(frame: CGRectMake(270 , ScreenSize.SCREEN_HEIGHT / 2 - 80, 80, 80))
         label.textAlignment = NSTextAlignment.Center
         label.text = "$5"
         label.font = UIFont.systemFontOfSize(40)
@@ -58,7 +56,10 @@ class ViewController: UIViewController,SEDraggableEventResponder {
     
     func setupDraggableLocations(){
         self.leftView.backgroundColor = UIColor.clearColor()
-        self.rightView.backgroundColor = UIColor.clearColor()
+        self.rightView.backgroundColor = UIColor.orangeColor()
+        self.leftView.layer.borderColor = UIColor.purpleColor().CGColor
+        self.leftView.layer.borderWidth = 3
+        self.leftView.clipsToBounds = false
         self.configureDraggableLocation(self.leftView)
         self.configureDraggableLocation(self.rightView)
     }

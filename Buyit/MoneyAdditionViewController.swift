@@ -32,8 +32,7 @@ class MoneyAdditionViewController: UIViewController,SEDraggableEventResponder {
         self.setupDraggableLocations()
         self.setupDraggableObjects()
         self.setupViewOnRight()
-        
-        
+
         
         
         // Do any additional setup after loading the view, typically from a nib.
@@ -63,15 +62,20 @@ class MoneyAdditionViewController: UIViewController,SEDraggableEventResponder {
         priceLabel.font = UIFont.systemFontOfSize(20)
         upperView.addSubview(priceLabel)
         
+        
+        let moneyBagImageView = UIImageView(frame: CGRectMake(20,50,50,50))
+        moneyBagImageView.image = UIImage(named: "moneyBag")
+        upperView.addSubview(moneyBagImageView)
         self.view.addSubview(upperView)
+        
         
     }
     
     
     func setupDraggableLocations(){
         self.leftView.backgroundColor = UIColor.clearColor()
-        self.rightView.backgroundColor = UIColor.clearColor()
-        self.leftView.layer.borderColor = UIColor.blueColor().CGColor
+        self.rightView.backgroundColor = UIColor.brownColor()
+        self.leftView.layer.borderColor = UIColor.purpleColor().CGColor
         self.leftView.layer.borderWidth = 3
         self.leftView.clipsToBounds = false
         self.configureDraggableLocation(self.leftView)

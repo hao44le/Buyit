@@ -70,6 +70,11 @@ class LeftViewController: UIViewController,UITableViewDataSource,UITableViewDele
         if let cell : UITableViewCell = tableView.dequeueReusableCellWithIdentifier("cell") {
             cell.textLabel!.text = titles[indexPath.row]
             cell.imageView!.image = UIImage(named: images[indexPath.row])
+            cell.layer.masksToBounds = false
+            cell.layer.shadowOffset = CGSizeMake(-15, 20);
+            cell.layer.shadowColor = UIColor.whiteColor().CGColor
+            cell.layer.shadowRadius = 5;
+            cell.layer.shadowOpacity = 1;
             //print(0)
             return cell
         } else {
@@ -79,6 +84,11 @@ class LeftViewController: UIViewController,UITableViewDataSource,UITableViewDele
             cell.textLabel!.textColor = UIColor.whiteColor()
             cell.textLabel!.highlightedTextColor = UIColor.lightGrayColor()
             cell.selectedBackgroundView = UIView()
+            cell.layer.masksToBounds = false
+            cell.layer.shadowOffset = CGSizeMake(-15, 20);
+            cell.layer.shadowRadius = 5;
+            cell.layer.shadowColor = UIColor.whiteColor().CGColor
+            cell.layer.shadowOpacity = 1;
             //print(1)
             return cell
         }
